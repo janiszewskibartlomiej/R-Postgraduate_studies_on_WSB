@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1572551872111.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6CC1D22E",
+    "lastKnownWriteTime" : 1572556631,
+    "last_content_update" : 1572560459593,
+    "path" : "D:/GITHUB/R-Postgraduate_studies_on_WSB/Part1_GR_2.R",
+    "project_path" : "Part1_GR_2.R",
+    "properties" : {
+        "cursorPosition" : "442,0",
+        "scrollLine" : "423"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

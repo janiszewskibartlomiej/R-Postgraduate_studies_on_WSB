@@ -21,11 +21,13 @@ sum(1, 2, 3)
 mean(c(1,2,3))    # srednia
 median(c(1,2,3))    #mediana
 min(c(1,2,3))
+c <- c(1,2,3) # c to jest vector
+
 
 
 #----- variables  ----
 
- a <- 3   # przypisanie wartości do a
+a <- 3   # przypisanie wartości do a
 a <- 4
 
 #---- data types-----
@@ -39,7 +41,7 @@ a <- TRUE
 b <- FALSE
 
 class(a)
-
+b
 
 ## numeric
 
@@ -70,8 +72,12 @@ aa[1]
 # choose first two elemenets from vector
 
 aa[1:2]
+
 # what happened?
+
 tst <- c(1, "bla", TRUE)
+tst[2]
+class(tst)
 
 #wektor musi byc zawsze w tym samym typie  powyzszy przyklad - wszytsko jest tekstem poniewaz jeden element jest tekstem
 
@@ -106,7 +112,7 @@ my_matrix[1,]  # wszytskie elemnety z wiersza
 
 
 my_matrix1[1,]
-my_matrix1[,2]
+my_matrix1[,2]  #wszytstkie wiersze z 2 kolumny
 
 
 
@@ -114,7 +120,8 @@ my_matrix1[,2]
 
 
 
-my_array <- array(data = c("green", "blue"), dim = c(2,3,4))   #dim - 2 wiersze 3 kolumny i powtorz 4 razy
+my_array <- array(data = c("green", "blue"), dim = c(2,3,4))   #dim - 2 wiersze 3 kolumny
+#i powtorz 4 razy
 
 my_array
 
@@ -125,7 +132,7 @@ vec1 <- c("dom", "kot", "pies", "kot", "kot", "pies")
 factor(vec1)
 
 my_factor <- factor(vec1)
-
+my_factor
 
 ## data frames - ramka danych
 
@@ -156,7 +163,7 @@ v1 + v2
 v1 - v2 
 v1 * v2   #1 element z 1 elem v2 drugi z drugim
 v1 / v2
-v1 %% v2
+v1 %% v2  #reszta z dzielenia
 v1 ^ v2
 
 
@@ -179,23 +186,24 @@ t2
 
 t1 & t2  #wspolna wartosc dla obu
 
-t1 | t2
-t1 || t2
+t1 | t2   # operator OR
+t1 || t2  # operator OR 
 
 
 
 # other operators 
 
-2:4
+2:4  #tworzy liczby od lewej do prawej - od 2 do 4 włacznie
 
 v1 <- 8
 v2 <- 12
 t <- 1:10
 
 t
+v1
+v2
 
-
-v1 %in% t
+v1 %in% t  # operator in 
 v2 %in% t
 
 #--- if clause ----
