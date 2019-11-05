@@ -113,6 +113,7 @@ x + y
 
 x=c(0:11)
 
+dim(x)
 #---- ex 9 -----
 # check if below elements are numeric and print the type it represents on the screen. 
 # sprawdz, czy ponizszy wektor jest typem numerycznym oraz wyswietl jaki rodzaj danych jest w wektorze.
