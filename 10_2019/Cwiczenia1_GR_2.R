@@ -178,6 +178,9 @@ df <- data.frame (Name = c(NA, "Kris", "JOhn", NA, "Alex"),
                   Price = c(34, 52, 21, 44, 20),
                   stringsAsFactors = FALSE) 
 
+df[,!is.na(df[1,])]
+
+#niby to jest be ale wynik jest ok > subset(df,!is.na(df$Name))
 
 
 #--------- ex 15 -------
@@ -186,6 +189,7 @@ df <- data.frame (Name = c(NA, "Kris", "JOhn", NA, "Alex"),
 
 zz <- c("seaside's", "Best ")
 
+sum(nchar(zz))
 
 
 #--------- ex 16 -------
@@ -196,12 +200,24 @@ apple <- "James"
 big_number <- "Bond"
 some_txt <- 007
 
+paste("00", some_txt, " ", apple, ",", " ", big_number, sep = "")
+
+
 
 #--------- ex 17 -------
 # write sum function for 2 arguments, which will check if both are numeric at first. 
 # napisz funkcje zwracajaca sume 2 wartosci, ktora bedzie sprawdzac czy 2 argumenty sa cyframi. 
 
+suma_char <- function(a, b) {
+  if(is.numeric(a) & is.numeric(b))
+    {a + b}
+  else NA
+  
+}
 
+
+suma_char(5,6)
+suma_char(3,"s")  
 
 #--------- ex 18 -------
 # add below wektors to data frame form ex. 2.
@@ -212,6 +228,9 @@ x <- c( 346, "Don")
 y <- c( 369, "Katy")
 
 
+df1$Name <- as.character(df1$Name)
+rbind(df1, x, y)
+
 #--------- ex 19 -------
 # create a lapply function which will count number of even numbers in each column and row.
 # utworz funkcje typu apply, ktora bedzie liczyc ilosc cyfr parzystych w wierszach i kolumnach
@@ -221,7 +240,14 @@ df2 <- data.frame(col1 = c(1, 2, 3),
                   col3 = c(7, 8, 9),
                   col4 = c(10, 1, 1))
 
+even_count <- function(x) {
+  
+  count_mod <- sum(ifelse(x%%2 == 0, 1, 0))
+  return(count_mod)
+}
 
+
+apply(df2, 2, FUN = function(x) even_count(x) )
 
 #--------- ex 20 -------
 # use lapply function to count sum of each matrix in list and calculate sum of the previous result.
@@ -234,4 +260,5 @@ C<-matrix(8:10, 3,2)
 MyList<-list(A,B,C) 
 
 
-
+MyList_sum <- lapply(MyList, sum)
+MyList_sum_total <- sum(unlist(MyList_sum))
