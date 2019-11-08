@@ -6,12 +6,15 @@
 # load file Sample2.txt to data frame
 # Zaladuj plik Sample2.txt do ramki danych
 
-
+obs2 <- read.csv(file = "D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\sample2.txt",
+                header = FALSE,
+                sep = "|")
 
 #---- ex 2 -------
 # name columns in data frame loaded in ex 1
 # nadaj nazwy kolumn ramce danych zaladowanej z zadania nr 1
 
+colnames(obs2) <- c("ID", "StarData", "Value" ,"EndData")
 
 
 #----- ex 3 ------

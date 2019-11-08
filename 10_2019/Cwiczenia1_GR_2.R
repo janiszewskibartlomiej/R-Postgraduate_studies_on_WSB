@@ -128,6 +128,11 @@ typeof(x)
 # wygeneruj wektor od 23 do 15. 
 
 x <- c(23:15)
+
+#lub
+z <- 23 : 15
+
+
 x
 
 seq(23,15)
@@ -177,6 +182,20 @@ df <- data.frame (Name = c(NA, "Kris", "JOhn", NA, "Alex"),
                   Sales = c(15, 18, 21, 56, 60), 
                   Price = c(34, 52, 21, 44, 20),
                   stringsAsFactors = FALSE) 
+
+any(is.na(df[,1]))
+any(is.na(df[,2]))
+any(is.na(df[,3]))
+
+chec1 <- apply(df, 2, function(x) sum(is.na(x)))
+#przejdz po df po komunach [1 po wierszach]
+myCol <- names(chec1[chec1==TRUE])
+df[ , myCol]
+
+
+check2 <- sapply(df, function(x) any(is.na(x)))
+
+
 
 df[,!is.na(df[1,])]
 

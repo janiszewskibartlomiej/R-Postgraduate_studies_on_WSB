@@ -442,28 +442,51 @@ df1 <- data.frame(City = c("Gdansk", "Gdynia", "Sopot", "Gdansk", "Gdynia", "Sop
 
 # create new data frame
 
+df2 <- data.frame(City_new = df1$City,
+                  Slaes_new = df1$Sales)
 
 
 # choose rows / columns
 
+df1[2,]
 
+df1[1:5,]
 
+df1[1:5, 3]
 
 # add new column do data frame
+
+df3 <- cbind(df1, test = c(1,2,3,4,5,6,7,8))
+
 
 
 # add new row do data frame
 
+
+df4 <- rbind(df1, c("Gdansk", 100, 1))
 
 
 
 # rbind, cbind
 
 
+
+
 # is na
 
 
 vec1 <- c(23, 45, NA, 45, 12, 34, 56, 21)
+vec1
+
+is.na(vec1) 
+!is.na(vec1)
+
+vec1 == 12
+
+vec1[!is.na(vec1)]
+
+NA #jest vartością pustą null of length 1
+NULL # pusty obiekt NULL object - empty one
 
 
 

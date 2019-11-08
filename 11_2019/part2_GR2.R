@@ -3,24 +3,41 @@
 ##########
 
 
+
+
 #---- load csv ----
+
+metadane <- read.csv(file = "D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\Metadane1.csv")
 
 
 #---- load txt ----
+obs <- read.csv(file = "D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\sample.txt",
+                header = FALSE,
+                sep = "\t")
+
+colnames(obs) <- c("ID", "ObsDate", "Value", "RelDate")
+
 
 
 #--- load xls(x) ----
 library(XLConnect)
+
+wb <- loadWorkbook(file = "D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\Metadane1.xlsx")
+
+Metadane1 <- readWorksheet(wb, sheet = "Metadane1")  #sheet to jest nazwa arkusza
 
 
 
 #---- detect encoding ----
 
 library(readr)
-guess_encoding("SampleFiles\\Sample.txt", n_max = 1000)
-guess_encoding("SampleFiles\\Metadane1.csv", n_max = 1000)
+guess_encoding("D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\Sample.txt", n_max = 1000)
+#guess_encoding to funkcja ktora sprawdza jakie jest prawdopodobienstwo wystapienia danego kodowania
 
+guess_encoding("D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\Metadane1.csv", n_max = 1000)
 
+Metadane2 <- read.csv("D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\Metadane1.csv",
+                      encoding = "ASCII")
 
 
 #---- db connection -----
@@ -29,7 +46,7 @@ guess_encoding("SampleFiles\\Metadane1.csv", n_max = 1000)
 library(RSQLite)
 
 # STEP 1: connect to db
-db <- dbConnect(SQLite(), dbname="SampleFiles\\SampleDB.db")
+db <- dbConnect(SQLite(), dbname="D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\SampleDB.db")
 
 # STEP 2: Declare what to retrive from db. SQL query
 Query_SQL <- paste("
@@ -92,7 +109,7 @@ drv <- JDBC(
   paste('C:\\JDBC\\sqljdbc_6.0\\enu\\jre8\\sqljdbc42.jar')) # remember to download the driver to particular path
 
 # STEP 1: Connect to db
-conn <- dbConnect(drv=drv, url = "jdbc:sqlserver://SERVER_ADDRESS",
+conn <- dbConnect(drv=drv, url = "jdbc:mysqlserver://SERVER_ADDRESS",
                   username="***",
                   password="***")
 
@@ -111,11 +128,14 @@ dbDisconnect(conn)
 library(XML)
 library(methods)
 
-
+myXml <- xmlToDataFrame("D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\sampleXML.xml")
 
 
 #---- load json -----
 library(jsonlite)
 
+myJson <- fromJSON("D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\sampleJSON.json")
+myJson
 
-
+PETS <- rbind(myJson$dogs, myJson$cats)
+PETS
