@@ -26,7 +26,7 @@ colnames(tst1) <- c("ID", "Date1", "Value", "Date2")
 
 library(XLConnect)
 
-wb <- loadWorkbook("SampleFiles\\Zadania\\Obs2.xlsx")
+wb <- loadWorkbook("D:\\GITHUB\\R-Postgraduate_studies_on_WSB\\11_2019\\SampleFiles\\Obs2.xlsx")
 
 test_df <- readWorksheet (wb 
                           ,sheet="Observations2"
