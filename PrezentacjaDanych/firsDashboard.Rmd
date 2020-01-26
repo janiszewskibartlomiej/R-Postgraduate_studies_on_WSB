@@ -1,0 +1,53 @@
+---
+title: "FirstFlexDashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+#source("Part5_source.R")
+```
+
+Page 1
+=======================================================================
+
+
+
+Row {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+
+#stocks_hist_plot2
+
+```
+
+Row {data-width=350 .tabset}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+articles <- 50
+valueBox(articles, icon = "fa-pencil")
+
+
+```
+
+### Chart C
+
+```{r}
+
+gauge(rating, min = 0, max = 50, gaugeSectors(
+  success = c(41, 50), warning = c(21, 40), danger = c(0, 20)
+))
+```
+
+Page 2
+=======================================================================

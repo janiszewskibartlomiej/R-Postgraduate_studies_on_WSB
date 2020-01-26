@@ -1,0 +1,65 @@
+---
+title: "MyFirstMD"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(datasets)
+library(DT)
+#data("mtcars")
+
+source("Part5_source.R", encoding = "UTF-8")
+
+```
+
+### Sample Cars
+
+These are samle cars: <br>
+
+*Audi
+
+*VW
+
+<p> Skoda </p>
+<p> **Tesla** </p>
+
+1. Lambo
+
+2. Porshe
+
+```{r sample_cars, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(mtcars)
+
+```
+## Samle Stocks
+
+```{r samle_stock, echo=FALSE}
+
+stocks_hist_plot2
+
+```
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.  [link](http://rmarkdown.rstudio.com)
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars, echo= FALSE}
+summary(cars)   
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

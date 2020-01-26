@@ -1,0 +1,18 @@
+---
+title: "Part5_ex_1"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+source('Part5_source.R')
+
+```
+
+
+Page 1
+=====================================  
+

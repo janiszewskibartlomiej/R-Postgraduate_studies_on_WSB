@@ -1,0 +1,89 @@
+---
+title: "zadaniaFlexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+    #css: style.css
+    
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(DT)
+source("Part5_source.R")
+```
+
+SavingsDashboard
+=======================================================================
+
+row
+-----------------------------------------------------------------------
+
+### Map of savingss
+
+```{r map}
+plotMap11
+```
+
+
+row
+-----------------------------------------------------------------------
+
+
+### Table of savings
+
+```{r savings}
+datatable(Savings)
+```
+
+### Description
+
+```{r description}
+
+```
+
+<h4 style="color:red">**Data on the savings ratio 1960–1970.**<h4><br>
+<h6 style="color:blue;">***A data frame with 50 observations on 5 variables.***</h6>
+
+<li>[,1]	sr	numeric	aggregate personal savings</li>
+
+<li>[,2]	pop15	numeric	% of population under 15</li>
+
+<li>[,3]	pop75	numeric	% of population over 75</li>
+
+<li>[,4]	dpi	numeric	real per-capita disposable income</li>
+
+<li>[,5]	ddpi	numeric	% growth rate of dpi</li>
+
+
+CarsDashboard
+====================================================================================
+
+row
+------------------------------------------------------------------------------------
+
+
+### Average Hp
+
+```{r hp}
+ av_hp <- mean(mtcars$hp)
+gauge(av_hp, min = 0, max = 200, symbol = '%', gaugeSectors(
+  success = c(80, 200), warning = c(40, 79), danger = c(0, 39)
+))
+```
+
+
+
+### Average mpg
+
+```{r mpg}
+
+```
+
+
+
+row
+-------------------------------------------------------------------------------------
+
+### Info
