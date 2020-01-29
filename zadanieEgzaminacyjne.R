@@ -2,7 +2,12 @@
 
 #Jaką funkcję należy użyc aby załadować plik csv do ramki danych? 
 
-read.csv() 
+1. read.csv() <--
+2. readCsv() 
+3. read_csv() 
+4. csv.read() 
+
+#read.csv() 
 
 
 
@@ -10,8 +15,12 @@ read.csv()
 
 Wybierz bibliotekę służącą do przekształcania danych (data wrangling).
 
+1. DBI
+2. plotly
+3. dplyr <--
+4. xlsx
 
- dplyr
+ #dplyr
 
 
 ### Pytanie 3 
@@ -36,7 +45,12 @@ SampleFunction(a= 2, b = 3)
 
 Która z poniższych bibliotek nie służy do wykonywania wykresów? 
 
-dplyr
+1. ggplot2
+2. plotly
+3. dplyr   <--
+4. Żadna z powyższych.
+
+#dplyr
 
 
 ### Pytanie 5
@@ -49,7 +63,13 @@ y <- c("w", "x", "y", "z")
 
 paste(x, y, sep="%%")
 
-"a%%w" "b%%x" "c%%y" "d%%z"
+
+1. "a;w","b;x","c;y","d;z"
+2. "a%%w%%b%%x%%c%%y%%d%%z"
+3. "a,w,b,x,c,y,d,z"
+4. "a%%w" "b%%x" "c%%y" "d%%z"  <--
+
+#"a%%w" "b%%x" "c%%y" "d%%z"
 
 
 ### Pytanie 6 
@@ -61,8 +81,12 @@ SampleDF <- data.frame(City = c("Gdansk", "Gdynia", "Sopot", "Gdansk", "Gdynia",
                   Sales = c(500, 400, 200, 400, 200, 250, 200, 100 ),
                   Employees = c(6, 4, 1, 6, 4, 1, 2, 3 ))
 
+1. SampleDF[,2]
+2. Df1[2,3]
+3. SampleDF[2,3] <--
+4. SampleDF[3,2]
 
-SampleDF[2,3]
+#SampleDF[2,3]
 
 
 ### Pytanie 7 
@@ -84,8 +108,13 @@ plot2 <- plot1 + geom_point()
 plot2
 
 ```
+1. Scatter  <--
+2. Line
+3. Histogram
+4. Map
 
-Scatter
+
+#Scatter
 
 
 ### Pytanie 8 
@@ -96,8 +125,12 @@ Jaki typ(y) danych będzie / będą zapisane w poniższym wektorze?
 SampleVec <- c(1, "bla", TRUE)
 
 ```
+1. numeric, character, logical
+2. character  <--
+3. numeric, character
+4. numeric
 
-character
+#character
 
 
 ### Pytanie 9
@@ -107,7 +140,9 @@ Do czego wykorzystywany jest znak '$' w ramkach danych?
 1. Odwoływalnie się do poszczególnych wierszy. 
 2. Budowania funkcji.
 3. Budowania relacji miedzy wierszami. 
-4. Odwoływanie się do poszczególnych kolumn.
+4. Odwoływanie się do poszczególnych kolumn.  <--
+
+#Odwoływanie się do poszczególnych kolumn.
 
 ### Pytanie 10 
 
@@ -122,10 +157,12 @@ SampleDF <- data.frame(City = c("Gdansk", "Gdynia", "Sopot", "Gdansk", "Gdynia",
 ```
 
 
-1. SampleDF %>% filter(Sales > 200 & Sales < 400)
+1. SampleDF %>% filter(Sales > 200 & Sales < 400)  <--
 2. SampleDF %>% filter(Sales > 200 | Sales < 400)
 3. SampleDF %>% filter(Sales >= 200 & Sales =< 400)
 4. SampleDF %>% filter(Sales > 200 %and% Sales < 400)
+
+#SampleDF %>% filter(Sales > 200 & Sales < 400)
 
 
 ### Pytanie 11 
@@ -135,8 +172,12 @@ Dla poniższego wektora podaj, który kod nie wywoła tylko i wyłącznie "MO" i
 
 t <- c("MO", "TU", "WE", "TH", "FR", "SA", "SO")
 
+1. t[c(1,2)] 
+2. t[c(-3,-4,-5,-6,-7)] 
+3. t[t=="MO" | t=="TU"]
+4. t[c(-7:-5)]  <--
 
-4. t[c(-7:-5)]
+#4. t[c(-7:-5)]
 
 
 ### Pytanie 12 
@@ -152,8 +193,8 @@ storms %>% mutate(Date = paste(year, month, day, sep= "-"))
 
 
 1. Zostaną wybrane wiersze, które są w formacie "yyyy-mm-dd".
-2. Zastąpi obecna kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.
-3. Utworzy nową kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.
+2. Zastąpi obecna kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.  
+3. Utworzy nową kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.  #chyba to <--
 4. Żadne z powyższych.
 
 ### Pytanie 13 
@@ -169,7 +210,7 @@ difftime(Sys.Date(), as.Date('2018-12-10'), units = 'd')
 
 
 1. -3
-2. 3
+2. 3  #chyba to <--
 3. -72
 4. 72
 
@@ -194,7 +235,7 @@ shop.data %>% mutate(profit= ifelse(is.na(profit), median(profit, na.rm=TRUE), p
 
 1. Wszystkie rekordy w kolumnie profit zostaną zamienione na NA.   
 2. Rekordy NA będą zastąpione średnią arytmetyczną wartości całej kolumny profit.
-3. Rekordy NA będą zastąpione madianą wartości całej kolumny profit.
+3. Rekordy NA będą zastąpione madianą wartości całej kolumny profit.   #chyba to
 4. Rekordy, które nie są NA będą zastąpione medianą wartości całej kolumny profit.
 
 
@@ -218,7 +259,7 @@ plot1
 
 1. W zakładce plot pojawi się kompletny wykres (tło ze skalą, wykres liniowy oraz podpisane osie).
 2. W zakładce plots pojawi się zarys wykresu (tło ze skalą oraz podpisane osie).
-3. W zakładce plot pojawi się kompletny wykres (tło ze skalą, wykres punktowy oraz podpisane osie).
+3. W zakładce plot pojawi się kompletny wykres (tło ze skalą, wykres punktowy oraz podpisane osie).  #chyba to 
 4. Nic nie zostanie wyświetlone. 
 
 
@@ -240,7 +281,7 @@ for ( i in  10 : 1) {
 1. Wektor wypełniony wartościami od 1 do 10.
 2. Wektor wypełniony wartościami od 10 do 1.
 3. 10 pojedynczych elementów (wektorów jednoelementowych) z wartościami od 1 do 10.
-4. 10 pojedynczych elementów (wektorów jednoelementowych) z wartościami od 10 do 1.
+4. 10 pojedynczych elementów (wektorów jednoelementowych) z wartościami od 10 do 1.   #chyba to <--
 
 ### Pytanie 17 
 
@@ -248,8 +289,10 @@ Która z poniższych bibliotek nie służy do ładowania plików xlsx do ramki d
 
 1. XLConnect 
 2. readxl
-3. RSQLite
+3. RSQLite  <--
 4. xlsx
+
+# RSQLite
 
 
 ### Pytanie 18
@@ -269,7 +312,7 @@ tst2 <- storms %>%
 1. if
 2. ifelse
 3. countif
-4. elseif
+4. elseif  #chyba to <--
 
 
 ### Pytanie 19 
@@ -285,7 +328,7 @@ SampleDF <- data.frame(City = c("Gdansk", "Gdynia", "Sopot", "Gdansk", "Gdynia",
 
 ```
 
-1. SampleDF %>% group_by(City) %>% summarise(Sum = sum(Sales), Average = mean(Sales))
+1. SampleDF %>% group_by(City) %>% summarise(Sum = sum(Sales), Average = mean(Sales))  #chyba to <--
 2. SampleDF %>% summarise(Sum = sum(Sales), Average = mean(Sales)) %>% group_by(City)
 3. TestDF %>% group_by(City) %>% summarise(Sum = sum(Sales), Average = mean(Sales))
 4. TestDF %>% summarise(Sum = sum(Sales), Average = mean(Sales))
@@ -297,6 +340,6 @@ Który z poniższy kodów zwróci błąd (error)?
 
 1. mtcars %>% filter(cyl == 6 && disp >= 160)
 2. mtcars %>% filter(cyl == 6 || disp >= 160)
-3. mtcars %>% filter(cyl = 6 | disp >= 160)
+3. mtcars %>% filter(cyl = 6 | disp >= 160)  #chyba to 
 4. mtcars %>% filter(cyl == 6 | disp >= 160)
 
