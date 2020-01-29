@@ -194,8 +194,10 @@ storms %>% mutate(Date = paste(year, month, day, sep= "-"))
 
 1. Zostaną wybrane wiersze, które są w formacie "yyyy-mm-dd".
 2. Zastąpi obecna kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.  
-3. Utworzy nową kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.  #chyba to <--
-4. Żadne z powyższych.
+3. Utworzy nową kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.  
+4. Żadne z powyższych. <--
+
+#Żadne z powyższych
 
 ### Pytanie 13 
 
@@ -204,15 +206,17 @@ Jeżeli dzisiaj jest 13 grudnia 2018, to co będzie wynikiem wywałania poniższ
 ```{r message=FALSE, warning=FALSE, eval=FALSE}
 
 
-difftime(Sys.Date(), as.Date('2018-12-10'), units = 'd')
-
+#difftime(Sys.Date(), as.Date('2018-12-10'), units = 'd')
+difftime(as.Date('2018-12-13'), as.Date('2018-12-10'), units = 'd')
 ```
 
 
 1. -3
-2. 3  #chyba to <--
+2. 3 <--
 3. -72
 4. 72
+
+#3
 
 
 ### Pytanie 14 
@@ -235,8 +239,10 @@ shop.data %>% mutate(profit= ifelse(is.na(profit), median(profit, na.rm=TRUE), p
 
 1. Wszystkie rekordy w kolumnie profit zostaną zamienione na NA.   
 2. Rekordy NA będą zastąpione średnią arytmetyczną wartości całej kolumny profit.
-3. Rekordy NA będą zastąpione madianą wartości całej kolumny profit.   #chyba to
+3. Rekordy NA będą zastąpione madianą wartości całej kolumny profit.   <--
 4. Rekordy, które nie są NA będą zastąpione medianą wartości całej kolumny profit.
+
+#Rekordy NA będą zastąpione madianą wartości całej kolumny profit.
 
 
 ### Pytanie 15 
@@ -258,10 +264,11 @@ plot1
 
 
 1. W zakładce plot pojawi się kompletny wykres (tło ze skalą, wykres liniowy oraz podpisane osie).
-2. W zakładce plots pojawi się zarys wykresu (tło ze skalą oraz podpisane osie).
-3. W zakładce plot pojawi się kompletny wykres (tło ze skalą, wykres punktowy oraz podpisane osie).  #chyba to 
+2. W zakładce plots pojawi się zarys wykresu (tło ze skalą oraz podpisane osie).  <--
+3. W zakładce plot pojawi się kompletny wykres (tło ze skalą, wykres punktowy oraz podpisane osie). 
 4. Nic nie zostanie wyświetlone. 
 
+ #W zakładce plots pojawi się zarys wykresu (tło ze skalą oraz podpisane osie).
 
 ### Pytanie 16
 
@@ -281,7 +288,10 @@ for ( i in  10 : 1) {
 1. Wektor wypełniony wartościami od 1 do 10.
 2. Wektor wypełniony wartościami od 10 do 1.
 3. 10 pojedynczych elementów (wektorów jednoelementowych) z wartościami od 1 do 10.
-4. 10 pojedynczych elementów (wektorów jednoelementowych) z wartościami od 10 do 1.   #chyba to <--
+4. 10 pojedynczych elementów (wektorów jednoelementowych) z wartościami od 10 do 1.  <--
+
+#10 pojedynczych elementów (wektorów jednoelementowych) z wartościami od 10 do 1.
+
 
 ### Pytanie 17 
 
@@ -310,10 +320,11 @@ tst2 <- storms %>%
 ```
 
 1. if
-2. ifelse
+2. ifelse  <--
 3. countif
-4. elseif  #chyba to <--
+4. elseif  
 
+#ifelse
 
 ### Pytanie 19 
 
@@ -328,10 +339,13 @@ SampleDF <- data.frame(City = c("Gdansk", "Gdynia", "Sopot", "Gdansk", "Gdynia",
 
 ```
 
-1. SampleDF %>% group_by(City) %>% summarise(Sum = sum(Sales), Average = mean(Sales))  #chyba to <--
+1. SampleDF %>% group_by(City) %>% summarise(Sum = sum(Sales), Average = mean(Sales))  <--
 2. SampleDF %>% summarise(Sum = sum(Sales), Average = mean(Sales)) %>% group_by(City)
 3. TestDF %>% group_by(City) %>% summarise(Sum = sum(Sales), Average = mean(Sales))
 4. TestDF %>% summarise(Sum = sum(Sales), Average = mean(Sales))
+
+#SampleDF %>% group_by(City) %>% summarise(Sum = sum(Sales), Average = mean(Sales))
+
 
 ### Pytanie 20 
 
@@ -340,6 +354,7 @@ Który z poniższy kodów zwróci błąd (error)?
 
 1. mtcars %>% filter(cyl == 6 && disp >= 160)
 2. mtcars %>% filter(cyl == 6 || disp >= 160)
-3. mtcars %>% filter(cyl = 6 | disp >= 160)  #chyba to 
+3. mtcars %>% filter(cyl = 6 | disp >= 160)  <--
 4. mtcars %>% filter(cyl == 6 | disp >= 160)
 
+#mtcars %>% filter(cyl = 6 | disp >= 160)
