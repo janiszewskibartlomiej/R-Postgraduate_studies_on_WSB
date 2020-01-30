@@ -194,10 +194,10 @@ storms %>% mutate(Date = paste(year, month, day, sep= "-"))
 
 1. Zostaną wybrane wiersze, które są w formacie "yyyy-mm-dd".
 2. Zastąpi obecna kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.  
-3. Utworzy nową kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.  
-4. Żadne z powyższych. <--
+3. Utworzy nową kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.  <--
+4. Żadne z powyższych. 
 
-#Żadne z powyższych
+#Utworzy nową kolumnę "Date", która będzie składać się roku, miesiąca oraz dnia.h
 
 ### Pytanie 13 
 
